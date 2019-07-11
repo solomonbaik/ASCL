@@ -27,16 +27,12 @@ public class C1JR_Code {
 				
 				//make sure value is under 26 and print out the new letter
 				
-				if(value > 26) {
-					if(value % 26 == 0) {
-						value = 26;
-					}else{
-						value = value % 26;
-					}
-				}
+				
+				while(value > 26)
+					value -= 26;
 				
 						
-					ans = (char)(value + 'A' - 1);	
+					ans = value != 0 ? (char)(value + 'A' - 1) : '#';	
 				System.out.println(ans);
 			}
 		
