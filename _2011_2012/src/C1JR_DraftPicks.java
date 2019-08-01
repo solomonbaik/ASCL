@@ -4,7 +4,7 @@ public class C1JR_DraftPicks {
 	
 	public static void main(String[] args) {
 		try {
-			Scanner in = new Scanner(new File("1314c1jr.in"));
+			Scanner in = new Scanner(new File("1112c1jr.in"));
 			for(int x = 0; x < 2; x++) {
 				double ans1 = 0, ans2 = 0, ans3 = 0, ans4 = 0, ans5 = 0;
 				double years = 0, value, avgsalary = 0, salary, avg16 = 0, avg18 = 0;
