@@ -28,8 +28,16 @@ public class C1JR_CHMOD {
 				    
 				    if(octal[x].charAt(2) == '1')	perm[x] += "x";//if the one is the third number, it's execute
 				    else	perm[x] += "-";
+				    perm[x]+=" ";
 				  }
-				  System.out.println(Arrays.toString(perm));
+				  for(int j = 0; j < 3; j++) {
+					  System.out.print(octal[j] + " ");
+				  }
+				  System.out.print(" and ");
+				  for(int j = 0; j < 3; j++) {
+					  System.out.print(perm[j].replace("null", ""));
+				  }
+				  System.out.println();
 				}
 		}
 		catch(Exception e) {
