@@ -15,20 +15,23 @@ public class C2JR_DigitalDeletions {
 				while(temp.size() > 0) {
 					for(int i = temp.size() - 1; i >= 0; i--) {
 						if(temp.get(i) == 0) {
-							for(int j = temp.get(i); j >= 0; j--){
+							for(int j = i; j >= 0; j--){
 								temp.remove(j);
 							}
 							break;
 						}
 					}
+					System.out.println(temp);
+					System.out.println(turns);
 					for(int i = 0; i < temp.size() - 1; i++) {
 						max = Math.max(temp.get(i), temp.get(i + 1));
 						index = temp.indexOf(max);
 					}
 					convert(max);
 					temp.set(index,  max);
+					turns++;
 				}
-				System.out.println(turns);
+				//System.out.println(turns);
 			}
 		}
 		catch(Exception e) {
