@@ -4,8 +4,8 @@ public class C2JR_DigitalDeletions {
 	
 	public static void main(String[] args) {
 		try {
+			Scanner in = new Scanner(new File("0405c2jr.in"));
 			for(int x = 0; x < 8; x++) {
-				Scanner in = new Scanner(new File("0405c2jr.in"));
 				String[] input = in.nextLine().split(" ");
 				ArrayList<Integer> temp = new ArrayList<Integer>();
 				int max = 0, turns = 0, index = 0;
@@ -18,20 +18,25 @@ public class C2JR_DigitalDeletions {
 							for(int j = i; j >= 0; j--){
 								temp.remove(j);
 							}
+							turns++;
 							break;
 						}
 					}
-					System.out.println(temp);
-					System.out.println(turns);
-					for(int i = 0; i < temp.size() - 1; i++) {
-						max = Math.max(temp.get(i), temp.get(i + 1));
-						index = temp.indexOf(max);
+					if(temp.size() == 0) {
+						break;
 					}
-					convert(max);
-					temp.set(index,  max);
+					//System.out.println(turns);
+					//System.out.println(temp);
+					for(int i = 0; i < temp.size(); i++) {
+						max = Math.max(max, temp.get(i));
+						//System.out.println("max: " + max);
+						index = temp.lastIndexOf(max);
+					}
+					max = convert(max);
+					temp.set(index, max);
 					turns++;
 				}
-				//System.out.println(turns);
+				System.out.println("turns: " + turns);
 			}
 		}
 		catch(Exception e) {
